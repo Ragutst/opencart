@@ -7,38 +7,68 @@ import pageObjects.AccountRegistrationPage;
 import pageObjects.HomePage;
 import testBase.BaseClass;
 
-public class TC_001_AccountRegistrationTest extends BaseClass {
+public class TC_001_AccountRegistrationTest extends BaseClass{
 	
-	@Test(groups= {"sanity","master"})
-	public void test_Account_Registration() throws InterruptedException {
+	@Test(groups= {"regression","master"})
+	public void verify_account_registration()
+	{
+		logger.debug("application logs started......");
+		logger.info("**** starting TC_001_AccountRegistrationTest  *****");
 		
-		        logger.info("*** Application Started ***");
-		        logger.info("Started the TC_001_AccountRegistrationTest Testcase");
-				
-				HomePage hp = new HomePage(driver);
-				logger.info("My Account has been clicked");
-				hp.clkMyaccount();
-				logger.info("Clicked on Registration button to register new account");
-				hp.clkRegister();
-				
-				AccountRegistrationPage ar = new AccountRegistrationPage(driver);
-				logger.info("Entering the details on the Registration Page");
-				ar.txtFstname(randomString().toUpperCase());
-				ar.txtLstname(randomString().toUpperCase());
-				ar.txtEmail(randomString()+"@gmail.com");
-				ar.txtTel(randomNumber());
-				String password = randomAlphaNumeric();
-				ar.txtPswd(password);
-				ar.txtConfmpswd(password);
-				ar.clkAgree();
-				logger.info("Clicking Continue button after the details has been entered");
-				ar.clkCont();
-				String confmsg=ar.getConfirmationMsg();
-				logger.info("Validating the Confirmation Message with the actual result");
-				Assert.assertEquals(confmsg, "Your Account Has Been Created!");
-				
-			
+		try
+		{
+		HomePage hp=new HomePage(driver);
+		hp.clickMyAccount();
+		logger.info("Clicked on MyAccount link");
+		
+		hp.clickRegister();
+		logger.info("Clicked on registration link");
+		
+		
+		logger.info("Entering customer details.. ");
+		AccountRegistrationPage regpage=new AccountRegistrationPage(driver);
+		
+		regpage.setFirstName(randomeString().toUpperCase());
+		regpage.setLastName(randomeString().toUpperCase());
+		regpage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
+		regpage.setTelephone(randomeNumber());
+		
+		String password=randomAlphaNumeric();
+		
+		regpage.setPassword(password);
+		regpage.setConfirmPassword(password);
+		
+		regpage.setPrivacyPolicy();
+		regpage.clickContinue();
+		logger.info("clicked on continue..");
+		
+		String confmsg=regpage.getConfirmationMsg();
+		
+		logger.info("Validating expected message..");
+		
+		Assert.assertEquals(confmsg, "Your Account Has Been Created!","Account creation failed");		
+		
+		}
+		catch(Exception e)
+		{
+			logger.error("test failed..");
+			Assert.fail("An exception occurred: " + e.getMessage());
+		}
+		
+		logger.debug("application logs end.......");
+		logger.info("**** finished TC_001_AccountRegistrationTest  *****");
 		
 	}
-
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+

@@ -9,9 +9,7 @@
   
   <test thread-count="5" name="Test">
   
-  	<parameter name="os" value="Windows" />
-  	<parameter name="browser"  value="chrome"/>  
-    
+  	
     <groups>
 		<run>
 			<include name="sanity" /> 
@@ -21,11 +19,15 @@
 		</run>
 	</groups>
     
-    
-    <classes>
-      <class name="testCases.TC_001_AccountRegistrationTest"/>
-       <class name="testCases.TC_002_LoginTest"/>
-      <!-- <class name="testCases.TC_003_LoginDDT"/> -->
-    </classes>
+    <parameter name="os" value="Windows" />
+  	<parameter name="browser"  value="chrome"/>  
+     <classes>
+			<class name="testCases.TC_001_AccountRegistrationTest" />
+			<class name="testCases.TC_002_LoginTest" />
+			<!-- <class name="testCases.TC_003_LoginDDT"/> -->
+			<class name="testCases.TC_004_SearchProductTest" />
+			<class name="testCases.TC_005_AddToCartPageTest" />
+			<class name="testCases.TC_006_EndToEndTest" />
+		</classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
