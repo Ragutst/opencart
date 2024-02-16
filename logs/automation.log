@@ -310,3 +310,16 @@
 14:06:27.240 [main] INFO  testCases.TC_002_LoginTest - ***** Entering the Login Details *****
 14:06:27.492 [main] INFO  testCases.TC_002_LoginTest - ***** Clicking Login Button *****
 14:06:27.989 [main] INFO  testCases.TC_002_LoginTest - ***** TC_002_Login Test Completed *****
+09:43:34.447 [main] INFO  testCases.TC_001_AccountRegistrationTest - *** Application Started ***
+09:43:34.452 [main] INFO  testCases.TC_001_AccountRegistrationTest - Started the TC_001_AccountRegistrationTest Testcase
+09:43:34.491 [main] INFO  testCases.TC_001_AccountRegistrationTest - My Account has been clicked
+09:43:34.913 [main] INFO  testCases.TC_001_AccountRegistrationTest - Clicked on Registration button to register new account
+09:43:35.695 [main] INFO  testCases.TC_001_AccountRegistrationTest - Entering the details on the Registration Page
+09:43:36.410 [main] INFO  testCases.TC_001_AccountRegistrationTest - Clicking Continue button after the details has been entered
+09:43:39.210 [main] INFO  testCases.TC_001_AccountRegistrationTest - Validating the Confirmation Message with the actual result
+09:43:41.374 [main] INFO  testCases.TC_002_LoginTest - ***** TC_002_Login Test Started *****
+09:43:41.374 [main] INFO  testCases.TC_002_LoginTest - ***** Clicking My Account *****
+09:43:41.910 [main] INFO  testCases.TC_002_LoginTest - ***** Clicking Login Button *****
+09:43:42.498 [main] INFO  testCases.TC_002_LoginTest - ***** Entering the Login Details *****
+09:43:42.785 [main] INFO  testCases.TC_002_LoginTest - ***** Clicking Login Button *****
+09:43:43.439 [main] INFO  testCases.TC_002_LoginTest - ***** TC_002_Login Test Completed *****
